@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://cardSim.tscn" type="PackedScene" id=2]
+[ext_resource path="res://PileButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://pointLst.tscn" type="PackedScene" id=4]
+[ext_resource path="res://trash.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Transistion/animateOver.tscn" type="PackedScene" id=6]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+cardSim = ExtResource( 2 )
+
+[node name="deckButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 200.0
+margin_top = 225.0
+margin_right = 310.0
+margin_bottom = 385.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PileButton" parent="." instance=ExtResource( 3 )]
+margin_left = 400.0
+margin_top = 50.0
+margin_right = 510.0
+margin_bottom = 210.0
+
+[node name="PileButton2" parent="." instance=ExtResource( 3 )]
+margin_left = 550.0
+margin_top = 50.0
+margin_right = 660.0
+margin_bottom = 210.0
+
+[node name="PileButton3" parent="." instance=ExtResource( 3 )]
+margin_left = 700.0
+margin_top = 50.0
+margin_right = 810.0
+margin_bottom = 210.0
+
+[node name="revPile" type="Position2D" parent="."]
+position = Vector2( 200, 50 )
+
+[node name="points" type="HBoxContainer" parent="."]
+margin_left = 200.0
+margin_top = 450.0
+margin_right = 1050.0
+margin_bottom = 650.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="redPts" parent="points" instance=ExtResource( 4 )]
+
+[node name="yellowPts" parent="points" instance=ExtResource( 4 )]
+position = Vector2( 150, 0 )
+
+[node name="bluePts" parent="points" instance=ExtResource( 4 )]
+position = Vector2( 300, 0 )
+
+[node name="greenPts" parent="points" instance=ExtResource( 4 )]
+position = Vector2( 450, 0 )
+
+[node name="purplePts" parent="points" instance=ExtResource( 4 )]
+position = Vector2( 600, 0 )
+
+[node name="trash" parent="." instance=ExtResource( 5 )]
+position = Vector2( 50, 225 )
+
+[node name="animateOver" parent="." instance=ExtResource( 6 )]
+
+[connection signal="pressed" from="deckButton" to="." method="_on_deckButton_pressed"]
+[connection signal="pressed" from="PileButton" to="." method="_on_PileButton_pressed"]
+[connection signal="pressed" from="PileButton2" to="." method="_on_PileButton2_pressed"]
+[connection signal="pressed" from="PileButton3" to="." method="_on_PileButton3_pressed"]
