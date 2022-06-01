@@ -7,6 +7,3 @@ margin_right = 110.0
 margin_bottom = 160.0
 text = "Pile"
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}

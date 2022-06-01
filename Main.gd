@@ -10,8 +10,15 @@ var currentPhase = gamePhase.bankOrDeck
 var reversedBool = false
 var pushing = false
 var cardNum = 0
+var playerCycle = []
+var playerNum = 4
+var population = 4
 
 var deck = _generateDeck()
+
+#playernum stuff
+
+
 
 func _generateDeck():
 	randomize()

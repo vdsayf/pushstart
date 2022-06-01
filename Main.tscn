@@ -20,9 +20,6 @@ margin_left = 200.0
 margin_top = 225.0
 margin_right = 310.0
 margin_bottom = 385.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PileButton" parent="." instance=ExtResource( 3 )]
 margin_left = 400.0
@@ -50,9 +47,6 @@ margin_left = 200.0
 margin_top = 450.0
 margin_right = 1050.0
 margin_bottom = 650.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="redPts" parent="points" instance=ExtResource( 4 )]
 
@@ -72,6 +66,10 @@ position = Vector2( 600, 0 )
 position = Vector2( 50, 225 )
 
 [node name="animateOver" parent="." instance=ExtResource( 6 )]
+
+[node name="otherPlayer" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 
 [connection signal="pressed" from="deckButton" to="." method="_on_deckButton_pressed"]
 [connection signal="pressed" from="PileButton" to="." method="_on_PileButton_pressed"]
